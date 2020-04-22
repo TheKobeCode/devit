@@ -4,7 +4,7 @@ import { App } from './App'
 
 import firebase from 'firebase/app'
 import 'firebase/analytics'
-import { firebaseConfig } from './utils/firebaseConfig'
+import { firebaseConfig } from './firebaseConfig'
 
 // intializing the app
 firebase.initializeApp(firebaseConfig)
