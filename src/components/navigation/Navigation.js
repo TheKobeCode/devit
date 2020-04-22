@@ -72,12 +72,12 @@ export class Navigation extends Component {
                 </DynamicBox>
                 <DynamicBox justifycontent='center'>
                   {!isAuth ? (
-                    <Link to='/'>
-                      <LogoStyled />
-                    </Link>
+                    <Link onClick={closeMenu} to='/'>
+                    <LogoStyled onClick={closeMenu} />
+                  </Link>
                   ) : (
-                    <Link to='/devits'>
-                      <LogoStyled />
+                    <Link onClick={closeMenu} to='/devits'>
+                      <LogoStyled onClick={closeMenu} />
                     </Link>
                   )}
                 </DynamicBox>

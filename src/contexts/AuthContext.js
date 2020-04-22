@@ -1,5 +1,6 @@
 import React, { Component, createContext } from 'react'
 
+import history from '../utils/history'
 import firebase from 'firebase/app'
 import 'firebase/auth'
 
@@ -36,6 +37,10 @@ export class AuthContextProvider extends Component {
     })
   }
 
+  pushDashboard = () => {
+    history.push('/dashboard')
+  }
+
   // this function can be used on the consumer
   // toggle the state of isAuth
   toggleAuth = () => {
@@ -51,7 +56,11 @@ export class AuthContextProvider extends Component {
   render () {
     return (
       <AuthContext.Provider
-        value={{ ...this.state, toggleAuth: this.toggleAuth }}
+        value={{
+          ...this.state,
+          toggleAuth: this.toggleAuth,
+          pushDashboard: this.pushDashboard
+        }}
       >
         {this.props.children}
       </AuthContext.Provider>

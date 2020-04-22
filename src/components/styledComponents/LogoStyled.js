@@ -1,6 +1,6 @@
 import React from 'react'
 import { Logo } from './Logo'
 
-export const LogoStyled = () => {
-  return <Logo>Devit</Logo>
+export const LogoStyled = props => {
+  return <Logo onClick={props.onClick} >Devit</Logo>
 }
