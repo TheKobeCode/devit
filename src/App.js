@@ -11,6 +11,8 @@ import { SignUp } from './pages/SignUp'
 import { Profile } from './pages/Profile'
 import { Dashboard } from './pages/Dashboard'
 import { Devits } from './pages/Devits'
+
+// importing context
 import { AuthContextProvider } from './contexts/AuthContext'
 
 export class App extends Component {
@@ -18,6 +20,7 @@ export class App extends Component {
     return (
       <AuthContextProvider>
         <Router history={history}>
+          <p>Navigation</p>
           <AnimatePresence exitBeforeEnter>
             <Route
               render={({ location }) => (
