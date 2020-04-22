@@ -1,5 +1,9 @@
 import React, { Component } from 'react'
 
+import history from '../../utils/history'
+import firebase from 'firebase/app'
+import 'firebase/auth'
+
 import { AuthContext } from '../../contexts/AuthContext'
 
 import { LogoStyled } from '../styledComponents/LogoStyled'
@@ -20,7 +24,7 @@ export class Navigation extends Component {
     return (
       <AuthContext.Consumer>
         {authContext => {
-          const { isAuth } = authContext
+          const { isAuth, toggleAuth } = authContext
 
           const showPopMenu = e => {
             const popUp = document.querySelector('.menuMobile')
@@ -30,6 +34,23 @@ export class Navigation extends Component {
           const toggleLogout = e => {
             const popUp = document.querySelector('.logout')
             popUp.classList.toggle('show-popup-logout')
+          }
+
+          const closeMenu = e => {
+            const popUp = document.querySelector('.menuMobile')
+            popUp.classList.remove('show-popup-menu')
+          }
+
+          const signOut = e => {
+            e.preventDefault()
+            firebase
+              .auth()
+              .signOut()
+              .then(() => {
+                toggleAuth()
+                history.push('/')
+              })
+            closeMenu()
           }
 
           return (
@@ -68,13 +89,24 @@ export class Navigation extends Component {
                   </MenuIcon>
                   {!isAuth ? (
                     <LinksNav className='menuMobile'>
-                      <LinkAnchor exact activeClassName='active' to='/'>
+                      <LinkAnchor
+                        onClick={closeMenu}
+                        exact
+                        activeClassName='active'
+                        to='/'
+                      >
                         Home
                       </LinkAnchor>
-                      <LinkAnchor exact activeClassName='active' to='/signin'>
+                      <LinkAnchor
+                        onClick={closeMenu}
+                        exact
+                        activeClassName='active'
+                        to='/signin'
+                      >
                         Sign In
                       </LinkAnchor>
                       <LinkAnchor
+                        onClick={closeMenu}
                         special='true'
                         exact
                         activeClassName='active'
@@ -85,13 +117,24 @@ export class Navigation extends Component {
                     </LinksNav>
                   ) : (
                     <LinksNav className='menuMobile'>
-                      <LinkAnchor exact activeClassName='active' to='/devits'>
+                      <LinkAnchor
+                        onClick={closeMenu}
+                        exact
+                        activeClassName='active'
+                        to='/devits'
+                      >
                         Devits
                       </LinkAnchor>
-                      <LinkAnchor exact activeClassName='active' to='/profile'>
+                      <LinkAnchor
+                        onClick={closeMenu}
+                        exact
+                        activeClassName='active'
+                        to='/profile'
+                      >
                         Profile
                       </LinkAnchor>
                       <LinkAnchor
+                        onClick={closeMenu}
                         special='true'
                         exact
                         activeClassName='active'
@@ -104,7 +147,9 @@ export class Navigation extends Component {
                         <div />
                       </MenuDesktopIcon>
                       <DesktopLinksNav className='logout'>
-                        <ButtonAnchor redhover='true'>Sign Out</ButtonAnchor>
+                        <ButtonAnchor onClick={signOut} redhover='true'>
+                          Sign Out
+                        </ButtonAnchor>
                       </DesktopLinksNav>
                     </LinksNav>
                   )}
