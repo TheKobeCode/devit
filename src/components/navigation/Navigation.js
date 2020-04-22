@@ -28,7 +28,6 @@ export class Navigation extends Component {
           }
 
           const showPopMenu = e => {
-            closeLogout()
             const popUp = document.querySelector('.menuMobile')
             popUp.classList.toggle('show-popup-menu')
           }
