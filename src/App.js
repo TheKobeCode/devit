@@ -17,13 +17,15 @@ import { Devits } from './pages/Devits'
 // importing context
 import { AuthContextProvider } from './contexts/AuthContext'
 
+import { Navigation } from './components/navigation/Navigation'
+
 export class App extends Component {
   render () {
     return (
       <AuthContextProvider>
         <GlobalStyles />
         <Router history={history}>
-          <p>Navigation</p>
+          <Navigation />
           <AnimatePresence exitBeforeEnter>
             <Route
               render={({ location }) => (
