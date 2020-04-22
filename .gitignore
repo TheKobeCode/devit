@@ -26,3 +26,5 @@ yarn-error.log*
 
 # ignoring firebaseConfig to protect variables
 firebaseConfig.js
+# Local Netlify folder
+.netlify
