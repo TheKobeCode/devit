@@ -4,6 +4,8 @@ import history from './utils/history'
 import { Router, Switch, Route } from 'react-router-dom'
 import { AnimatePresence } from 'framer-motion'
 
+import { GlobalStyles } from './styles/GlobalStyles'
+
 // importing pages
 import { Home } from './pages/Home'
 import { SignIn } from './pages/SignIn'
@@ -19,6 +21,7 @@ export class App extends Component {
   render () {
     return (
       <AuthContextProvider>
+        <GlobalStyles />
         <Router history={history}>
           <p>Navigation</p>
           <AnimatePresence exitBeforeEnter>
