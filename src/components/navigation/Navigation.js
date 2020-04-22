@@ -13,6 +13,7 @@ import { Container } from '../styledComponents/Container'
 import { DynamicBox } from '../styledComponents/DynamicBox'
 import { MenuIcon, MenuDesktopIcon } from '../styledComponents/MenuIcon'
 import { LinksNav, DesktopLinksNav } from '../styledComponents/LinksNav'
+import { Link } from 'react-router-dom'
 
 export class Navigation extends Component {
   render () {
@@ -39,7 +40,12 @@ export class Navigation extends Component {
 
           return (
             <Container sticky>
-              <NavContainer>
+              <NavContainer
+                initial={{ translateY: -5, opacity: 0 }}
+                animate={{ translateY: 0, opacity: 1 }}
+                exit={{ translateY: 5, opacity: 0 }}
+                transition={{ duration: 0.5, delay: 0.25 }}
+              >
                 <DynamicBox justifycontent='flex-start'>
                   <BasicAnchor
                     small
@@ -50,7 +56,15 @@ export class Navigation extends Component {
                   </BasicAnchor>
                 </DynamicBox>
                 <DynamicBox justifycontent='center'>
-                  <LogoStyled />
+                  {!isAuth ? (
+                    <Link to='/'>
+                      <LogoStyled />
+                    </Link>
+                  ) : (
+                    <Link to='/devits'>
+                      <LogoStyled />
+                    </Link>
+                  )}
                 </DynamicBox>
                 <DynamicBox justifycontent='flex-end'>
                   <MenuIcon onClick={showPopMenu}>
