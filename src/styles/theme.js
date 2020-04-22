@@ -6,6 +6,7 @@ export const theme = {
   colors: {
     principalColor: '#1A051D',
     purpleColor: '#3F3356',
+    superLightColor: '#F7F5F9',
 
     textColor: '#3F3356',
     lightTextColor: '#D0C9D6',
