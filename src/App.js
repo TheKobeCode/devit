@@ -19,7 +19,7 @@ export class App extends Component {
         <AnimatePresence exitBeforeEnter>
           <Route
             render={({ location }) => (
-              <Switch key={location} location={location.pathname}>
+              <Switch key={location.pathname} location={location}>
                 <Route exact path='/' component={Home} />
                 <Route exact path='/signin' component={SignIn} />
                 <Route exact path='/signup' component={SignUp} />
