@@ -7,7 +7,6 @@ import 'firebase/analytics'
 
 require('dotenv').config()
 
-// firebase config
 var firebaseConfig = {
   apiKey: process.env.API_KEY,
   authDomain: process.env.AUTH_DOMAIN,
