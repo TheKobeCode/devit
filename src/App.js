@@ -1,11 +1,15 @@
-import React from 'react'
+import React, { Component } from 'react'
 
-function App () {
-  return (
-    <div className='App'>
-      <h2>App</h2>
-    </div>
-  )
+import { Router, Switch } from 'react-router-dom'
+
+export class App extends Component {
+  render () {
+    return (
+      <Router>
+        <Switch>
+          <Route />
+        </Switch>
+      </Router>
+    )
+  }
 }
-
-export default App

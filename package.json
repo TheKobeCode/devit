@@ -9,6 +9,7 @@
     "dotenv": "^8.2.0",
     "firebase": "^7.14.1",
     "framer-motion": "^1.10.3",
+    "history": "^4.10.1",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
     "react-router-dom": "^5.1.2",
