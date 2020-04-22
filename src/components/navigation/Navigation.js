@@ -22,11 +22,6 @@ export class Navigation extends Component {
         {authContext => {
           const { isAuth } = authContext
 
-          const closeLogout = e => {
-            const popUp = document.querySelector('.logout')
-            popUp.classList.remove('show-popup-logout')
-          }
-
           const showPopMenu = e => {
             const popUp = document.querySelector('.menuMobile')
             popUp.classList.toggle('show-popup-menu')
