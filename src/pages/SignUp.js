@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 
-import history from '../contexts/AuthContext'
+// import history from '../contexts/AuthContext'
 import firebase from 'firebase/app'
 import 'firebase/auth'
 
