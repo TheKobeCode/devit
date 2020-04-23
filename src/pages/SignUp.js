@@ -57,7 +57,7 @@ export class SignUp extends Component {
               initial={{ translateX: -5, opacity: 0 }}
               animate={{ translateX: 0, opacity: 1 }}
               exit={{ translateX: 5, opacity: 0 }}
-              transition={{ duration: 0.5, delay: 0.25 }}
+              transition={{ duration: 0.5 }}
             >
               {!isAuth ? (
                 <React.Fragment>
@@ -70,6 +70,7 @@ export class SignUp extends Component {
                     onSubmit={signUpUser}
                     error={this.state.error}
                     message={this.state.message}
+                    signValue="Sign Up"
                   />
                 </React.Fragment>
               ) : (

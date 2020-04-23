@@ -38,4 +38,27 @@ export const P = styled.p`
       font-size: ${theme.textMetrics.smallText};
       text-align: center;
     `}
+
+    ${props =>
+      props.resetpasswordbtn &&
+      css`
+        color: ${theme.colors.lightTextColor};
+        margin-top: 20px;
+        font-size: ${theme.textMetrics.smallText};
+        text-align: center;
+        cursor: pointer;
+
+        :hover {
+          color: ${theme.colors.textColor};
+        }
+      `}
+
+      ${props =>
+        props.success &&
+        css`
+          color: ${theme.colors.greenColor};
+          margin-top: 10px;
+          font-size: ${theme.textMetrics.greenColor};
+          text-align: center;
+        `}
 `

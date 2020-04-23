@@ -30,7 +30,7 @@ export class App extends Component {
         history.push('/devits')
         console.log('pushed to devits')
       } else {
-        history.push('/signin')
+        history.push('/')
         console.log('pushed to home')
       }
     })

@@ -31,11 +31,39 @@ export const FormSign = props => {
         <Input
           inputsubmit='true'
           type='submit'
-          value='Sign Up'
+          value={props.signValue}
           onSubmit={props.onSubmit}
         />
         {props.error ? <P errormessage='true'>{props.message}</P> : null}
       </Form>
+      {!props.signIn ? null : (
+        <SignContainer normal='true'>
+          <P resetpasswordbtn='true' onClick={props.onReset}>
+            Forgot yout password?
+          </P>
+          {props.openReset ? (
+            <Form onSubmit={props.onResetPassword}>
+              <Input
+                type='email'
+                name='emailreset'
+                placeholder='A valid email'
+                onChange={props.onChangeReset}
+              />
+              <Input
+                type='submit'
+                inputsubmit='true'
+                name='emailreset'
+                value='Reset password'
+                onSubmit={props.onResetPassword}
+              />
+              {props.errorreset ? (
+                <P errormessage='true'>{props.message}</P>
+              ) : null}
+            </Form>
+          ) : null}
+          {props.success ? <P success='true'>{props.message}</P> : null}
+        </SignContainer>
+      )}
     </SignContainer>
   )
 }
