@@ -34,6 +34,16 @@ export class SignUp extends Component {
         {authContext => {
           const { isAuth, toggleAuth, pushDashboard } = authContext
 
+          // Function to send verification to the registered user
+          const sendVerification = () => {
+            firebase.auth().onAuthStateChanged(user => {
+              if (user) {
+                user.sendEmailVerification()
+              }
+            })
+          }
+
+          // Sign up user function
           const signUpUser = e => {
             e.preventDefault()
             const { email, password } = this.state
@@ -41,6 +51,7 @@ export class SignUp extends Component {
               .auth()
               .createUserWithEmailAndPassword(email, password)
               .then(() => {
+                sendVerification()
                 pushDashboard()
                 toggleAuth()
               })
@@ -70,7 +81,7 @@ export class SignUp extends Component {
                     onSubmit={signUpUser}
                     error={this.state.error}
                     message={this.state.message}
-                    signValue="Sign Up"
+                    signValue='Sign Up'
                   />
                 </React.Fragment>
               ) : (
