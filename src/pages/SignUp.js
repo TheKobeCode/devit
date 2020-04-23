@@ -7,6 +7,7 @@ import 'firebase/auth'
 import { AuthContext } from '../contexts/AuthContext'
 
 import { Container } from '../components/styledComponents/Container'
+import { FormSign } from '../components/FormSign/FormSign'
 
 export class SignUp extends Component {
   constructor (props) {
@@ -44,29 +45,15 @@ export class SignUp extends Component {
           }
 
           return (
-            <Container>
+            <Container
+              initial={{ translateX: -5, opacity: 0 }}
+              animate={{ translateX: 0, opacity: 1 }}
+              exit={{ translateX: 5, opacity: 0 }}
+              transition={{ duration: 0.5, delay: 0.25 }}
+            >
               {!isAuth ? (
                 <React.Fragment>
-                  <div>No user, can SignUp</div>
-                  <form onSubmit={signUpUser}>
-                    <input
-                      name='email'
-                      type='email'
-                      placeholder='email'
-                      onChange={this.onChange}
-                    />
-                    <input
-                      onChange={this.onChange}
-                      name='password'
-                      type='password'
-                      placeholder='password'
-                    />
-                    <input
-                      type='submit'
-                      value='Sign Up'
-                      onSubmit={signUpUser}
-                    />
-                  </form>
+                  <FormSign onChange={this.onChange} onSubmit={signUpUser} />
                 </React.Fragment>
               ) : (
                 <div>With user, not SignUp</div>
