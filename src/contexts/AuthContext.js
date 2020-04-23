@@ -12,7 +12,8 @@ export class AuthContextProvider extends Component {
 
     this.state = {
       isAuth: null,
-      loading: false
+      loading: false,
+      userVerfied: false
     }
   }
 
