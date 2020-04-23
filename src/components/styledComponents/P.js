@@ -29,4 +29,13 @@ export const P = styled.p`
         width: calc(100% - 60%);
       }
     `}
+
+  ${props =>
+    props.errormessage &&
+    css`
+      color: ${theme.colors.redColor};
+      margin-top: 10px;
+      font-size: ${theme.textMetrics.smallText};
+      text-align: center;
+    `}
 `

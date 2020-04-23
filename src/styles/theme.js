@@ -11,7 +11,8 @@ export const theme = {
     textColor: '#3F3356',
     lightTextColor: '#D0C9D6',
 
-    linkColor: '#6979F8'
+    linkColor: '#6979F8',
+    redColor: '#FF647C',
   },
 
   textMetrics: {

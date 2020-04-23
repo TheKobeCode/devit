@@ -9,10 +9,10 @@ import { LinkAnchor } from '../styledComponents/Anchors'
 export const FormSign = props => {
   return (
     <SignContainer>
-      <Title heading1='true'>Sign Up</Title>
+      <Title heading1='true'>{props.titleForm}</Title>
       <P formp='true'>
-        Create a new account using your email and password, if you already have an
-        account <LinkAnchor to='/signin'>Sign In.</LinkAnchor>
+        {props.descriptionSign}{' '}
+        <LinkAnchor to={props.href}>{props.whereRedirect}</LinkAnchor>
       </P>
       <Form onSubmit={props.onSubmit}>
         <Input
@@ -34,6 +34,7 @@ export const FormSign = props => {
           value='Sign Up'
           onSubmit={props.onSubmit}
         />
+        {props.error ? <P errormessage='true'>{props.message}</P> : null}
       </Form>
     </SignContainer>
   )

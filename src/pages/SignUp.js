@@ -16,7 +16,9 @@ export class SignUp extends Component {
     this.state = {
       loading: false,
       email: '',
-      password: ''
+      password: '',
+      error: false,
+      message: ''
     }
   }
 
@@ -42,6 +44,12 @@ export class SignUp extends Component {
                 pushDashboard()
                 toggleAuth()
               })
+              .catch(error => {
+                this.setState({
+                  error: error,
+                  message: error.message
+                })
+              })
           }
 
           return (
@@ -53,7 +61,16 @@ export class SignUp extends Component {
             >
               {!isAuth ? (
                 <React.Fragment>
-                  <FormSign onChange={this.onChange} onSubmit={signUpUser} />
+                  <FormSign
+                    titleForm='Sign Up'
+                    descriptionSign='Create a new account, using your email, then verify your account. If you already have an account,'
+                    whereRedirect='Sign In.'
+                    href='/signin'
+                    onChange={this.onChange}
+                    onSubmit={signUpUser}
+                    error={this.state.error}
+                    message={this.state.message}
+                  />
                 </React.Fragment>
               ) : (
                 <div>With user, not SignUp</div>
