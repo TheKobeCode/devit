@@ -34,6 +34,25 @@ export const LinkAnchor = styled(NavLink)`
       font-size: ${theme.textMetrics.smallText};
     `}
 
+  ${props =>
+    props.specialhero &&
+    css`
+      padding: 5px 20px;
+      margin: 20px auto;
+      color: ${theme.colors.purpleColor} !important; 
+      border: solid 1px ${theme.colors.purpleColor};
+      border-radius: 4px;
+
+      :hover {
+        color: white !important;
+        background-color: ${theme.colors.purpleColor};
+      }
+
+      @media only screen and (min-width: 1024px) {
+        margin: 20px 0;
+      }
+    `}
+
   @media only screen and (min-width: 1024px) {
     color: ${theme.colors.lightTextColor};
     font-weight: ${theme.fontMetrics.link};

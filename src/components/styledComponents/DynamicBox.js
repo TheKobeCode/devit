@@ -2,7 +2,7 @@ import styled from 'styled-components'
 
 export const DynamicBox = styled.div`
   display: flex;
-  flex-direction: row;
+  flex-direction: ${props => props.flexdirection || 'row'};
   justify-content: ${props => props.justifycontent};
-  align-items: center;
+  align-items: ${props => props.alignitems || 'center'};
 `

@@ -29,6 +29,19 @@ export const P = styled.p`
         width: calc(100% - 60%);
       }
     `}
+    
+  ${props =>
+    props.specialheader &&
+    css`
+      text-align: center;
+      margin: 0px 0 25px 0;
+
+      @media only screen and (min-width: 1024px) {
+        text-align: start;
+        width: 85%;
+      }
+    `}
+
 
   ${props =>
     props.errormessage &&

@@ -121,9 +121,9 @@ export class Navigation extends Component {
                         onClick={closeMenu}
                         exact
                         activeClassName='active'
-                        to='/devits'
+                        to='/codebits'
                       >
-                        Devits
+                        CodeBits
                       </LinkAnchor>
                       <LinkAnchor
                         onClick={closeMenu}
