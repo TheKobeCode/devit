@@ -64,7 +64,7 @@ export class Navigation extends Component {
                 <DynamicBox justifycontent='flex-start'>
                   <BasicAnchor
                     small
-                    href='https://github.com/TheKobeCode/devit'
+                    href='https://github.com/TheKobeCode/codebit'
                     target='blank'
                   >
                     GitHub
