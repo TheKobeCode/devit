@@ -8,7 +8,6 @@ import { AuthContext } from '../contexts/AuthContext'
 
 import { Container } from '../components/styledComponents/Container'
 import { FormSign } from '../components/FormSign/FormSign'
-import { P } from '../components/styledComponents/P'
 
 export class SignIn extends Component {
   constructor (props) {
