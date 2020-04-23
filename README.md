@@ -1,2 +1,2 @@
-# devit
-The repo for Devit app
+# CodeBit
+The repo for CodeBit app
