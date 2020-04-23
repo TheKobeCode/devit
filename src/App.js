@@ -28,10 +28,8 @@ export class App extends Component {
     firebase.auth().onAuthStateChanged(user => {
       if (user) {
         history.push('/codebits')
-        console.log('pushed to devits')
       } else {
         history.push('/')
-        console.log('pushed to home')
       }
     })
   }
